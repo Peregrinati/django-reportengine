@@ -1,6 +1,8 @@
 ReportEngine (for Django 1.1+)
 ==============================
 
+Forking this because there appear to be some issues with it and django 1.5
+
 by Nikolaj Baer for Web Cube CMS [http://www.webcubecms.com]
 ------------------------------------------------------------
 
