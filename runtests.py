@@ -9,7 +9,7 @@ from django.conf import settings, global_settings
 if not settings.configured:
     settings.configure(
         DATABASES={
-            'default': { 
+            'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
             }
         },
@@ -34,6 +34,7 @@ if not settings.configured:
 
 from django.test.simple import DjangoTestSuiteRunner
 
+
 def runtests(*args, **kwargs):
     if not args:
         args = ['tests']
@@ -41,8 +42,8 @@ def runtests(*args, **kwargs):
     parent = dirname(abspath(__file__))
     sys.path.insert(0, parent)
     test_runner = DjangoTestSuiteRunner(
-        verbosity=kwargs.get('verbosity', 1), 
-        interactive=kwargs.get('interactive', False), 
+        verbosity=kwargs.get('verbosity', 1),
+        interactive=kwargs.get('interactive', False),
         failfast=kwargs.get('failfast')
     )
 
@@ -51,6 +52,7 @@ def runtests(*args, **kwargs):
 
 if __name__ == '__main__':
     parser = OptionParser()
-    parser.add_option('--failfast', action='store_true', default=False, dest='failfast')
-    (options, args)= parser.parse_args()
-    runtests(failfast=options.failfast, *args) 
+    parser.add_option(
+        '--failfast', action='store_true', default=False, dest='failfast')
+    (options, args) = parser.parse_args()
+    runtests(failfast=options.failfast, *args)
